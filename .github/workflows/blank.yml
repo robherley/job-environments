@@ -1,0 +1,66 @@
+name: Environments
+
+on: [workflow_dispatch]
+
+jobs:
+  lab-job:
+    runs-on: ubuntu-latest
+    environment:
+      name: lab
+      url: https://example.com/
+
+    steps:
+      - name: First
+        run: |
+          echo "starting step"
+          sleep 2
+          echo "done with step"
+      - name: Second
+        run: |
+          echo "starting step"
+          sleep 3
+          echo "done with step"
+      - name: Third
+        run: |
+          echo "starting step"
+          sleep 5
+          echo "done with step"
+      - name: Fourth
+        run: |
+          echo "starting step"
+          sleep 6
+          echo "done with step"
+      - name: Fifth
+        run: |
+          echo "starting step"
+          sleep 10
+          echo "done with step"
+      - name: Sixth
+        run: |
+          echo "starting step"
+          sleep 14
+          echo "done with step"
+  staging-job:
+    runs-on: ubuntu-latest
+    environment: staging
+
+    steps:
+      - name: Say hello world
+        run: echo Hello, world!
+      - name: Sleep 10s
+        run: |
+          sleep 10
+          echo "done with step"
+
+  production-job:
+    runs-on: ubuntu-latest
+    environment: production
+    needs: [staging-job]
+
+    steps:
+      - name: Say hello world
+        run: echo Hello, world!
+      - name: Sleep 10s
+        run: |
+          sleep 10
+          echo "done with step"
