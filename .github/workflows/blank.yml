@@ -51,14 +51,40 @@ jobs:
         run: |
           sleep 10
           echo "done with step"
-      - name: Fake Check
+      - name: Fake Check1
         uses: dflydev/check-runs-action@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          id: fake-check
+          id: fake-check1
           status: completed
           conclusion: success
-          name: Fake Check
+          name: Fake Check1
+      - name: Fake Check2
+        uses: dflydev/check-runs-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          id: fake-check2
+          status: completed
+          conclusion: success
+          name: Fake Check2
+      - name: Fake Check3
+        uses: dflydev/check-runs-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          id: fake-check3
+          status: completed
+          conclusion: success
+          name: Fake Check3
+      - name: Fake Check4
+        uses: dflydev/check-runs-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          id: fake-check4
+          status: completed
+          conclusion: success
+          name: Fake Check4
+
+
 
   production-job:
     runs-on: ubuntu-latest
