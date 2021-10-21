@@ -51,6 +51,12 @@ jobs:
         run: |
           sleep 10
           echo "done with step"
+      - name: Fake Check
+        uses: dflydev/check-runs-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          id: fake-check
+          status: in_progress
 
   production-job:
     runs-on: ubuntu-latest
