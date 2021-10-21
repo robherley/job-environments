@@ -1,6 +1,6 @@
 name: Environments
 
-on: [workflow_dispatch]
+on: [push, workflow_dispatch]
 
 jobs:
   lab-job:
@@ -56,7 +56,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           id: fake-check
-          status: in_progress
+          status: success
           name: Fake Check
 
   production-job:
