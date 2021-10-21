@@ -57,6 +57,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           id: fake-check
           status: completed
+          conclusion: success
           name: Fake Check
 
   production-job:
