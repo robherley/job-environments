@@ -57,6 +57,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           id: fake-check
           status: in_progress
+          name: Fake Check
 
   production-job:
     runs-on: ubuntu-latest
